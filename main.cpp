@@ -2,7 +2,25 @@
 #include "TXLib.h"
 using namespace std;
 
+void drawCupboard(int x, int y,int x2,int y2){
+        txSetColour(TX_GREEN);
+        txSetFillColour(TX_GREEN);
+        txRectangle(x, y, x2, y2);
+        txSetFillColour(TX_ORANGE);
+        txSetColour(TX_ORANGE);
+        txSelectFont ("Comic Sans MS", 32);
+        txDrawText(x, y, x2, y2, "шкаф");
+}
 
+void drawBathroom(int xv,int yv,int xv2,int yv2){
+        txSetColour(TX_LIGHTBLUE);
+        txSetFillColour(TX_LIGHTBLUE);
+        txRectangle(xv, yv, xv2, yv2);
+        txSetFillColour(TX_ORANGE);
+        txSetColour(TX_ORANGE);
+        txSelectFont ("Comic Sans MS", 32);
+        txDrawText(xv+50, yv-20, xv2-40, yv2, "ванная");
+}
 int main()
     {
 
@@ -34,95 +52,31 @@ int main()
     scanf("%d", &xq);
 
     if(xq == 1){
-        int x  = 160;
-        int y  = 480;
-        int x2 = 310;
-        int y2 = 440;
-        txSetColour(TX_GREEN);
-        txSetFillColour(TX_GREEN);
-        txRectangle(x, y, x2, y2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(x, y, x2, y2, "шкаф");
+        drawCupboard(160, 480, 310, 440);
     }
     if(xq == 2){
-        int x  = 360;
-        int y  = 480;
-        int x2 = 510;
-        int y2 = 440;
-        txSetColour(TX_GREEN);
-        txSetFillColour(TX_GREEN);
-        txRectangle(x, y, x2, y2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(x, y, x2, y2, "шкаф");
+        drawCupboard(360, 480, 510, 440);
     }
     if(xq == 3){
-        int x  = 560;
-        int y  = 480;
-        int x2 = 710;
-        int y2 = 440;
-        txSetColour(TX_GREEN);
-        txSetFillColour(TX_GREEN);
-        txRectangle(x, y, x2, y2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(x, y, x2, y2, "шкаф");
+        drawCupboard(560, 480, 710, 440);
     }
     int xw;//, вопрос, куда поставить ванну
     printf("Выберите расположение ванной\n1-левый бок\n2-середина\n3-правый бок\n");
     scanf("%d", &xw);
 
     if(xw == 1){
-
-        int yv = 380;
-        int xv = 240;
-        int xv2= 440;
-        int yv2= 440;
-        txSetColour(TX_LIGHTBLUE);
-        txSetFillColour(TX_LIGHTBLUE);
-        txRectangle(xv, yv, xv2, yv2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(xv+50, yv-20, xv2-40, yv2, "ванная");
+        drawBathroom(240, 380, 440, 440);
     }
 
     if(xw == 2){
-
-        int yv = 380;
-        int xv = 440;
-        int xv2= 640;
-        int yv2= 440;
-        txSetColour(TX_LIGHTBLUE);
-        txSetFillColour(TX_LIGHTBLUE);
-        txRectangle(xv, yv, xv2, yv2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(xv+50, yv-20, xv2-40, yv2, "ванная");
+        drawBathroom(440, 380, 640, 440);
     }
 
     if(xw == 3){
-
-        int yv = 380;
-        int xv = 640;
-        int xv2= 840;
-        int yv2= 440;
-        txSetColour(TX_LIGHTBLUE);
-        txSetFillColour(TX_LIGHTBLUE);
-        txRectangle(xv, yv, xv2, yv2);
-        txSetFillColour(TX_ORANGE);
-        txSetColour(TX_ORANGE);
-        txSelectFont ("Comic Sans MS", 32);
-        txDrawText(xv+50, yv-20, xv2-40, yv2, "ванная");
+        drawBathroom(640, 380, 840, 440);
     }
 
         txDeleteDC (background_FromTXLibHelp);
-
 
     return 0;
 
